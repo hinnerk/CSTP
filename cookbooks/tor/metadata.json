@@ -1,0 +1,45 @@
+{
+    "recommendations": {
+    },
+    "attributes": {
+    },
+    "maintainer": "Hinnerk Haardt",
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "maintainer_email": "hinnerk@randnotizen.de",
+    "conflicting": {
+    },
+    "platforms": {
+      "debian": [
+
+      ],
+      "fedora": [
+
+      ],
+      "centos": [
+
+      ],
+      "ubuntu": [
+
+      ],
+      "redhat": [
+
+      ]
+    },
+    "license": "Apache 2.0",
+    "version": "0.7.1",
+    "providing": {
+    },
+    "recipes": {
+      "tor": "Installs Tor"
+    },
+    "replacing": {
+    },
+    "name": "tor",
+    "description": "Installs Tor",
+    "groupings": {
+    },
+    "long_description": ""
+  }
