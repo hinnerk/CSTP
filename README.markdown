@@ -17,6 +17,7 @@ Do not use it unless you are a masochist genius developer willing to risk everyt
     * Ubuntu Linux might possibly work
     * Of course you may try for yourself! Please report to us as soon as you found out!
 * [VirtualBox][] (current version)
+* [Chef][]
 * [Vagrant][]
 
 ## Startup
