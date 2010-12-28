@@ -34,7 +34,7 @@ Vagrant::Config.run do |config|
     desktop_config.chef.run_list.clear
     desktop_config.chef.add_recipe("apt")
     # desktop_config.chef.add_recipe("firefox")
-    # desktop_config.chef.add_recipe("chromium-browser")
+    desktop_config.chef.add_recipe("chromium-browser")
     
   end
   
