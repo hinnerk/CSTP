@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: screen
+# Cookbook Name:: tor
 # Recipe:: default
 #
-# Copyright 2008-2009, Opscode, Inc.
+# Copyright 2010, Hinnerk Haardt
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 #
 
 package "tor" do
-  action :install
+  action :install 
 end
 
 ## TODO:
