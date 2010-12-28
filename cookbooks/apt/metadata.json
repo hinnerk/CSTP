@@ -1,0 +1,21 @@
+{"recommendations": {},
+    "attributes": {},
+    "maintainer": "Hinnerk Haardt",
+    "suggestions": {},
+    "dependencies": {},
+    "maintainer_email":"hinnerk@randnotizen.de",
+    "conflicting": {},
+    "platforms":{
+        "debian": [],
+        "ubuntu": []},
+    "license":"Apache 2.0",
+    "version":"0.1",
+    "providing": {},
+    "recipes": {
+        "apt": "Runs apt-get update during compile phase"},
+    "replacing": {},
+    "name":"apt",
+    "description": "Configures apt and apt services",
+    "groupings": {},
+    "long_description":""
+}
