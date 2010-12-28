@@ -38,7 +38,7 @@ to make anything worthwile of it.
 Now play with it:
 
     $ vagrant ssh-config desktop -h cstp-desktop >> ~/.ssh/config
-    $ ssh -X cstp-desktop firefox
+    $ ssh -X cstp-desktop chromium-browser
 
 After a few seconds a remote firefox should pop up on your local X-Server.
 
