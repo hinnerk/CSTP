@@ -15,6 +15,7 @@ Vagrant::Config.run do |config|
     #
     # Recipes, for now added direct instead via a meta recipe.
     router_config.chef.run_list.clear
+    router_config.chef.add_recipe("apt")
     #router_config.chef.add_recipe("tor")
   end
   
@@ -31,8 +32,9 @@ Vagrant::Config.run do |config|
     #
     # Recipes, for now added direct instead via a meta recipe.
     desktop_config.chef.run_list.clear
-    #desktop_config.chef.add_recipe("firefox")
-    desktop_config.chef.add_recipe("chromium-browser")
+    desktop_config.chef.add_recipe("apt")
+    # desktop_config.chef.add_recipe("firefox")
+    # desktop_config.chef.add_recipe("chromium-browser")
     
   end
   
