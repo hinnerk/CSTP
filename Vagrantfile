@@ -1,4 +1,4 @@
-require "vagrantplugins/firefox"
+require "vagrantplugins/webbrowser"
 
 
 Vagrant::Config.run do |config|
