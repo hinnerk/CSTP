@@ -1,0 +1,45 @@
+{
+    "recommendations": {
+    },
+    "attributes": {
+    },
+    "maintainer": "Hinnerk Haardt",
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "maintainer_email": "hinnerk@randnotizen.de",
+    "conflicting": {
+    },
+    "platforms": {
+      "debian": [
+
+      ],
+      "fedora": [
+
+      ],
+      "centos": [
+
+      ],
+      "ubuntu": [
+
+      ],
+      "redhat": [
+
+      ]
+    },
+    "license": "Apache 2.0",
+    "version": "0.0.1",
+    "providing": {
+    },
+    "recipes": {
+      "router": "Installs a tor proxy server"
+    },
+    "replacing": {
+    },
+    "name": "router",
+    "description": "Installs a Tor proxy server",
+    "groupings": {
+    },
+    "long_description": ""
+  }
