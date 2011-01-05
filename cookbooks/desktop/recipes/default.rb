@@ -4,3 +4,4 @@
 require_recipe "apt"
 require_recipe "chromium-browser"
 # require_recipe "firefox"
+require_recipe "ifdown"
