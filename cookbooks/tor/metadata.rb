@@ -6,6 +6,6 @@ version           "0.7.1"
 
 recipe "tor", "Installs Tor privacy proxy"
 
-%w{ redhat centos fedora ubuntu }.each do |os|
-  supports os
-end
+# %w{ debian redhat centos fedora ubuntu }.each do |os|
+supports "ubuntu"
+# end
