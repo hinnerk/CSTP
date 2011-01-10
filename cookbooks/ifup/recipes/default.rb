@@ -18,17 +18,11 @@
 #
 
 file "/etc/nologin" do
-  action :delete
-end
-
-ruby_block "show_warning" do
-  block do
-    Chef::Log.warn("About to destroy interface eth0 now...")
-  end
   action :create
+  mode "0644"
+  owner "root"
 end
 
-execute "/sbin/ifdown eth0" do
+execute "/sbin/ifup eth0" do
   action :run
 end
-
