@@ -35,9 +35,9 @@ package "gnupg" do
 end
 
 # get gpg key from the tor project
-execute "gpg --keyserver keys.gnupg.net --recv 886DDD89 && gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
-" do
+execute "apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 886DDD89" do
   not_if "apt-key finger | grep 'A3C4 F0F9 79CA A22C DBA8  F512 EE8C BC9E 886D DD89'"
+  notifies :run, resources(:execute => "apt-get update"), :immediately
 end
 
 # install tor + poplio
