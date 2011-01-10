@@ -17,15 +17,10 @@
 # limitations under the License.
 #
 
-e = execute "apt-get --yes update" do
-  action :nothing
+execute "apt-get --yes update" do
+  action :run
 end
 
-e.run_action(:run)
-
-
-e = execute "apt-get --yes upgrade" do
-  action :nothing
+execute "apt-get --yes upgrade" do
+  action :run
 end
-
-e.run_action(:run)
