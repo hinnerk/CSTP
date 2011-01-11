@@ -8,13 +8,12 @@ class SomeCommand < Vagrant::Command::Base
   def run_something
     if Mario::Platform.windows?
       raise Errors::SSHUnavailableWindows, :key_path => env.config.ssh.private_key_path,
-            :ssh_port => port()
+            :ssh_port => "22"
     end
 
     raise Errors::SSHUnavailable if !Kernel.system("which ssh > /dev/null 2>&1")
 
     options = {}
-    options[:port] = port()
     [:username, :private_key_path].each do |param|
       options[param] = env.config.ssh.send(param)
     end
@@ -22,7 +21,7 @@ class SomeCommand < Vagrant::Command::Base
     check_key_permissions(options[:private_key_path])
 
     # Command line options
-    command_options = ["-p #{options[:port]}", "-o UserKnownHostsFile=/dev/null",
+    command_options = ["-p 22", "-o UserKnownHostsFile=/dev/null",
                        "-o StrictHostKeyChecking=no", "-o IdentitiesOnly=yes",
                        "-o ForwardX11=yes",
                        "-i #{options[:private_key_path]}"]
@@ -33,7 +32,8 @@ class SomeCommand < Vagrant::Command::Base
     # we simply exec.
     pid = nil
     pid = fork if Vagrant::Util::Platform.leopard? || Vagrant::Util::Platform.tiger?
-    Kernel.exec "ssh #{command_options.join(" ")} #{options[:username]}@#{options[:host]} #{@browser}".strip if pid.nil?
+    # TODO: replace 192.168.23.15 with a variable set by vagrant
+    Kernel.exec "ssh #{command_options.join(" ")} #{options[:username]}@192.168.23.15 #{@browser}".strip if pid.nil?
     Process.wait(pid) if pid
   end
 
@@ -54,26 +54,6 @@ class SomeCommand < Vagrant::Command::Base
     # in case.
     raise Errors::SSHKeyBadPermissions, :key_path => key_path
   end
-
-
-  def port
-
-    vm = target_vms.detect { |v| v.name == :desktop }
-
-    pnum = nil
-    vm.vm.network_adapters.each do |na|
-      pnum = na.nat_driver.forwarded_ports.detect do |fp|
-        fp.name == env.config.ssh.forwarded_port_key
-      end
-      break if pnum
-    end
-
-    return pnum.hostport if pnum
-
-    # Fall back to the default
-    return env.config.ssh.port
-  end
-
 end
 
 
@@ -96,6 +76,18 @@ class CromiumCommand < SomeCommand
   def initialize(*args)
     super
     @browser = "chromium-browser"
+  end
+
+end
+
+
+class GoogleCromeCommand < SomeCommand
+
+  register "chrome", "Starts a remote Google Chrome."
+
+  def initialize(*args)
+    super
+    @browser = "google-chrome --proxy-server=\"http://192.168.23.10:8118\""
   end
 
 end
