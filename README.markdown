@@ -30,7 +30,7 @@ This should create two running virtual machines, connected via a private local i
 
 to make anything worthwile of it.
 
-    $ vagrant box add lucid32_minbase http://files.randnotizen.de/lucid32-minbase.box
+    $ vagrant box add lucid32_minbase http://files.randnotizen.de/lucid32_minbase.box
     $ git clone git@github.com:hinnerk/CSTP.git
     $ cd CSTP
     $ vagrant up
