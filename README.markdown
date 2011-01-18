@@ -14,33 +14,24 @@ Do not use it unless you are a masochist genius developer willing to risk everyt
 
 * a supported operating system
     * Mac OS X (Snow Leopard) seems to work fine
-    * Ubuntu Linux might possibly work
+    * Linux should work
     * Of course you may try for yourself! Please report to us as soon as you found out!
 * [VirtualBox][] (current version)
 * [Chef][]
 * [Vagrant][]
+* a X-Server, for example X11 (needs to be installed on Mac OS X, is usually dilivered with Linux)
 
 ## Startup
 
-This should create two running virtual machines, connected via a private local interface. You will at least need to manually
-
-* install and configure Tor and a Proxy server in the router
-* configure Firefox or Chromium to use it in the desktop vm
-* remove external network connection (usually eth0) in the desktop vm
-
-to make anything worthwile of it.
+This should create two running virtual machines, connected via a private local interface. You should probably remove the external network connection (usually eth0) in the desktop vm manually to make sure the webbrowsers can only connect through TOR.
 
     $ vagrant box add lucid32_minbase http://files.randnotizen.de/lucid32_minbase.box
     $ git clone git@github.com:hinnerk/CSTP.git
     $ cd CSTP
     $ vagrant up
+    $ vagrant chrome
 
-Now play with it:
-
-    $ vagrant ssh-config desktop -h cstp-desktop >> ~/.ssh/config
-    $ ssh -X cstp-desktop chromium-browser
-
-After a few seconds a remote firefox should pop up on your local X-Server.
+After a few seconds a remote Googel Chrome should pop up on your local X-Server.
 
 
 # We need help!
